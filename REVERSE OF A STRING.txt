@@ -1,0 +1,29 @@
+QUERY :
+----------------------------------------------------------------
+                      REVERSE OF A STRING
+-----------------------------------------------------------------
+PL/SQL/ BLOCK :
+
+
+declare 
+	n varchar(10);
+	m varchar(20);
+	len int;
+begin
+	n:='&string';
+	len:=length(n);
+	for i in reverse 1..len
+	loop
+		m:=m||substr(n,i,1);
+	end loop;
+	dbms_output.put_line('Reverse: '||m);
+end;
+/
+	
+OUTPUT :
+-----------------------------------------------------------------
+Enter value for string: sailu
+old   6:        n:='&string';
+new   6:        n:='sailu';
+Reverse: ulias
+------------------------------------------------------------------
